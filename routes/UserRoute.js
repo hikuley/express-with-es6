@@ -1,10 +1,10 @@
 import express from 'express';
 import User from '../models/user'
 
-let router = express.Router();
+let userRouter = express.Router();
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
+userRouter.get('/', (req, res, next) => {
     let languages = [
         {
             language: 'Spanish'
@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
     res.json(languages);
 });
 
-router.get('/users', (req, res, next) => {
+userRouter.get('/users', (req, res, next) => {
     let users = [
         new User('James Coonce', 'jcoonce', 'none@none.com'),
         new User('Bob Coonce', 'bcoonce', 'none@none.com'),
@@ -45,4 +45,4 @@ router.get('/users', (req, res, next) => {
     res.json(users);
 });
 
-export default router;
+export default userRouter;
